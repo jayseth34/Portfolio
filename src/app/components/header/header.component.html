@@ -1,0 +1,14 @@
+<header>
+    <nav>
+      <div class="hamburger" (click)="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul [ngClass]="{'open': isMenuOpen}">
+        <li><a routerLink="/main" (click)="closeMenu()">Main</a></li>
+        <li><a routerLink="/links" (click)="closeMenu()">Links</a></li>
+        <li><a routerLink="/portfolio" (click)="closeMenu()">Portfolio 2019-25</a></li>
+      </ul>
+    </nav>
+  </header>

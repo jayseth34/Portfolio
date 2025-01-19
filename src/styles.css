@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/assets/fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+         url('/assets/fonts/PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+  
+.star {
+    position: absolute;
+    top: 50%; /* Start vertical position */
+    left: -10%; /* Start off-screen */
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 0 20px 5px #ff0000; /* Glow effect */
+    animation: star-pass 12s linear infinite; /* Repeat every 7 seconds */
+}
+
+@keyframes star-pass {
+    0% {
+        transform: translateX(0) translateY(0) scale(1); /* Start at left */
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        transform: translateX(120vw) translateY(-20vh) scale(1.5); /* Move diagonally */
+        opacity: 0.8; /* Slight fade */
+    }
+    100% {
+        transform: translateX(150vw) translateY(-40vh) scale(0.8); /* Move off-screen */
+        opacity: 0; /* Fully fade out */
+    }
+}

@@ -1,0 +1,94 @@
+/* header.component.scss */
+header {
+    padding: 20px;
+    position: relative; /* Add relative positioning to header */
+    z-index: 101; /* Ensure header is above other content */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  nav li {
+    margin: 0 15px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    padding: 5px 10px; /* Add padding for better touch area */
+  }
+  
+  nav a:hover {
+    color: #aaa;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 102; /* Ensure hamburger is above the menu */
+  }
+  
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      position: fixed;
+      top: 60px; /* Adjust based on header height */
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 60px); /* Ensure full viewport height minus header */
+      background-color: rgba(0, 0, 0, 0.95);
+      transform: translateY(-100%);
+      padding: 20px;
+      overflow-y: auto; /* Add scroll if menu items overflow */
+      z-index: 100;
+    }
+  
+    nav ul.open {
+      transform: translateY(0);
+    }
+  
+    nav li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  
+    .hamburger {
+      display: block;
+      color: #aaa;
+    }
+      /* Hamburger animation when menu is open */
+      nav ul.open ~ .hamburger .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      nav ul.open ~ .hamburger .line:nth-child(2) {
+        opacity: 0;
+      }
+      
+      nav ul.open ~ .hamburger .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+  }

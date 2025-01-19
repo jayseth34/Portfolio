@@ -1,0 +1,9 @@
+.container {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    font-family: sans-serif;
+}

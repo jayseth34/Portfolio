@@ -1,0 +1,98 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 5em;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    z-index: 1;
+    padding: 0; /* Removed padding */
+    /* mix-blend-mode: difference;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease, color 0.2s ease; */
+}
+
+.welcome-text h1 {
+    line-height: 0.5; /* Slightly reduced line-height */
+    margin-bottom: 0.1em; /* Reduced margin */
+}
+
+.welcome-text h1:last-child {
+    margin-bottom: 0;
+}
+
+.welcome-text h1:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    color: #d50000; /* Or a slightly lighter shade of white */
+    cursor: default;
+}
+
+.author-info {
+    font-size: 1.1rem;
+    margin-top: 25px; /* Reduced margin */
+}
+
+.heartbeat-line {
+    position: relative;
+    margin-top: 20px;
+    width: 100px; /* Width of the line */
+    height: 2px; /* Thickness of the line */
+    background: linear-gradient(90deg, transparent, #d50000, transparent);
+    animation: heartbeat 2s infinite;
+    overflow: hidden;
+}
+
+.tagline{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0% {
+        transform: scaleX(4);
+    }
+    25% {
+        transform: scaleX(5.5);
+    }
+    50% {
+        transform: scaleX(3);
+    }
+    75% {
+        transform: scaleX(4.5);
+    }
+    100% {
+        transform: scaleX(4);
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 3em;
+    }
+    .welcome-text h1 {
+        line-height: 0.7;
+        margin-bottom: 0.1em;
+    }
+    .author-info {
+        font-size: 1rem;
+        margin-top: 1px; /* Reduced margin on mobile */
+    }
+
+    .heartbeat-line {
+        width: 80px; /* Adjust width for smaller screens */
+    }
+
+    .star {
+        width: 7px; /* Smaller star for mobile */
+        height: 7px;
+    }
+}
