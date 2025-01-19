@@ -22,4 +22,18 @@
       <h3>About Me</h3>
       <p>{{ developerBio }}</p>
     </div>
+  
+      <div class="contact-container">
+          <h3>Contact Me</h3>
+          <div *ngFor="let contact of contactInfo" class="contact-item">
+              <a *ngIf="contact.link" [href]="contact.link" target="_blank" rel="noopener noreferrer">
+                  <i class="material-icons">{{ contact.icon }}</i> {{ contact.value }}
+              </a>
+              <span *ngIf="!contact.link">
+                  <i class="material-icons">{{ contact.icon }}</i> {{ contact.value }}
+              </span>
+          </div>
+      </div>
+
+      <div class="star"></div>
   </div>

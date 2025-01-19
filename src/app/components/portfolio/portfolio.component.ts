@@ -11,6 +11,13 @@ interface SkillCategory {
   skills: string[];
 }
 
+interface ContactInfo {
+  label: string;
+  value: string;
+  icon: string; // Add icon property
+  link?: string; // Optional link for mailto: or tel:
+}
+
 @Component({
   selector: 'app-portfolio',
   standalone: true,
@@ -38,6 +45,13 @@ export class PortfolioComponent {
       name: 'Databases',
       skills: ['PostgreSQL', 'Oracle']
     }
+  ];
+
+  contactInfo: ContactInfo[] = [
+    { label: 'Phone', value: '+91 9920279905', icon: 'phone', link: 'tel:9920279905' },
+    { label: 'Email', value: 'jayseth34@gmail.com', icon: 'email', link: 'mailto:jayshaileshseth@gmail.com' },
+    { label: 'LinkedIn', value: 'linkedin.com/in/jayseth34', icon: 'linkedin', link: 'https://www.linkedin.com/in/jayseth34' }
+    // Add more contact info as needed (e.g., address, social media)
   ];
 
   developerBio = `I am a passionate and results-oriented Full Stack Angular/.NET Developer with a proven track record of delivering high-quality web applications. 
