@@ -20,7 +20,7 @@ export class LinksComponent {
     {
       name: 'Metalline',
       github: 'https://github.com/jayseth34/met/tree/main/src',
-      liveDemo: 'https://delicate-profiterole-0b3644.netlify.app/home',
+      liveDemo: 'https://delicate-profiterole-0b3644.netlify.app/',
       description: 'Metalline is a metal selling company which build trust among the marketers to sell best quality metal.'
     },
     {
