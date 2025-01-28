@@ -24,16 +24,16 @@ export class LinksComponent {
       description: 'Metalline is a metal selling company which build trust among the marketers to sell best quality metal.'
     },
     {
-      name: 'Project 2',
+      name: 'Gold Healet',
       github: 'https://github.com/jayseth34/healet-html',
       liveDemo: 'https://goldhealet.netlify.app/',
       description: 'Healet is a gold selling company which showcases all of it handwork jewellery through its site.'
     },
     {
-      name: 'Project 3',
-      github: 'https://github.com/yourusername/project3',
-      liveDemo: 'https://project3.netlify.app',
-      description: 'A brief description of Project 3.'
+      name: 'DONEE',
+      github: 'https://github.com/jayseth34/DONEE',
+      liveDemo: 'https://jayseth34.github.io/DONEE/#',
+      description: 'DONEE is an application to donate for the needful. It ses Razor pay for payment methods.'
     },
     // Add more projects here
   ];

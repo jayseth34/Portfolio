@@ -1,39 +1,43 @@
 <div class="portfolio-container">
-    <h2>My Portfolio</h2>
-  
-    <div class="counts-container">
+  <h2>My Portfolio</h2>
+
+  <div class="counts-container">
       <div *ngFor="let count of counts" class="count">
-        <span class="count-value">{{ count.value }}</span>
-        <span class="count-label">{{ count.label }}</span>
+          <span class="count-value">{{ count.value }}</span>
+          <span class="count-label">{{ count.label }}</span>
       </div>
-    </div>
-  
-    <div class="skills-container">
+  </div>
+
+  <div class="skills-container">
       <h3>Tech Stack</h3>
       <div *ngFor="let category of skills" class="skill-category">
-        <h4>{{ category.name }}</h4>
-        <ul class="skill-list">
-          <li *ngFor="let skill of category.skills">{{ skill }}</li>
-        </ul>
+          <h4>{{ category.name }}</h4>
+          <ul class="skill-list">
+              <li *ngFor="let skill of category.skills">{{ skill }}</li>
+          </ul>
       </div>
-    </div>
-  
-    <div class="developer-bio">
+  </div>
+
+  <div class="developer-bio">
       <h3>About Me</h3>
       <p>{{ developerBio }}</p>
-    </div>
-  
-      <div class="contact-container">
-          <h3>Contact Me</h3>
-          <div *ngFor="let contact of contactInfo" class="contact-item">
-              <a *ngIf="contact.link" [href]="contact.link" target="_blank" rel="noopener noreferrer">
-                  <i class="material-icons">{{ contact.icon }}</i> {{ contact.value }}
-              </a>
-              <span *ngIf="!contact.link">
-                  <i class="material-icons">{{ contact.icon }}</i> {{ contact.value }}
-              </span>
-          </div>
-      </div>
-
-      <div class="star"></div>
   </div>
+
+  <div class="contact-container">
+      <h3>Contact Me</h3>
+      <div *ngFor="let contact of contactInfo" class="contact-item">
+          <a *ngIf="contact.link" [href]="contact.link" target="_blank" rel="noopener noreferrer">
+              <i class="material-icons">{{ contact.icon }}</i>
+              <span class="contact-text">{{ contact.value }}</span> </a>
+          <span *ngIf="!contact.link">
+              <i class="material-icons">{{ contact.icon }}</i>
+              <span class="contact-text">{{ contact.value }}</span>
+          </span>
+      </div>
+  </div>
+
+  <div class="hire-me">
+      <h3>Interested in Hiring Me?</h3>
+      <button (click)="openEmail()">Get in Touch</button>
+  </div>
+</div>

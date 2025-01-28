@@ -27,9 +27,9 @@ interface ContactInfo {
 })
 export class PortfolioComponent {
   counts: Count[] = [
-    { value: '70+', label: 'Deliverables' },
-    { value: 12, label: 'Clients' },
-    { value: 66, label: 'Locations' }
+    { value: '2', label: 'Deliverables' },
+    { value: 2, label: 'Clients' },
+    { value: 2, label: 'Locations' }
   ];
 
   skills: SkillCategory[] = [
@@ -57,4 +57,9 @@ export class PortfolioComponent {
   developerBio = `I am a passionate and results-oriented Full Stack Angular/.NET Developer with a proven track record of delivering high-quality web applications. 
   I specialize in front-end development using Angular, creating user-friendly and responsive interfaces, and back-end development with .NET, building robust and scalable APIs. 
   I thrive in collaborative environments and enjoy tackling complex challenges to create innovative solutions that meet client needs.`;
+  myEmail: any = 'jayseth34@gmail.com';
+
+  openEmail() {
+    window.location.href = `mailto:${this.myEmail}`;
+}
 }

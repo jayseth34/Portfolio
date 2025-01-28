@@ -7,92 +7,106 @@ main {
     position: relative;
     overflow: hidden;
     text-align: center;
+    background: linear-gradient(to bottom, #111, #222); /* Dark gradient background */
+    color: #eee; /* Light text color */
+    padding: 60px; /* Added padding */
 }
 
 .welcome-text {
-    font-size: 5em;
+    font-size: 2em; /* Increased font size */
     font-family: 'Playfair Display', serif;
     position: relative;
     z-index: 1;
-    padding: 0; /* Removed padding */
-    /* mix-blend-mode: difference;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    transition: transform 0.2s ease, color 0.2s ease; */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stronger text shadow */
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .welcome-text h1 {
-    line-height: 0.5; /* Slightly reduced line-height */
-    margin-bottom: 0.1em; /* Reduced margin */
+    line-height: 0.6;
+    margin-bottom: 0.2em;
+    opacity: 0.9; /* Slightly less opaque */
 }
 
-.welcome-text h1:last-child {
-    margin-bottom: 0;
-}
-
-.welcome-text h1:hover {
-    transform: scale(1.05); /* Slightly scale up on hover */
-    color: #d50000; /* Or a slightly lighter shade of white */
+.welcome-text:hover {
+    transform: scale(1.03) translateY(-5px); /* Scale and lift on hover */
+    color: #0ff; /* Neon highlight color */
+    text-shadow: 0 0 15px #0ff; /* Glowing text shadow on hover */
     cursor: default;
 }
 
 .author-info {
-    font-size: 1.1rem;
-    margin-top: 25px; /* Reduced margin */
+    font-size: 1.2rem;
+    margin-top: 30px;
+    opacity: 0.8; /* Slightly less opaque */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .heartbeat-line {
     position: relative;
-    margin-top: 20px;
-    width: 100px; /* Width of the line */
-    height: 2px; /* Thickness of the line */
-    background: linear-gradient(90deg, transparent, #d50000, transparent);
-    animation: heartbeat 2s infinite;
-    overflow: hidden;
+    margin-top: 30px;
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #0ff, transparent); /* Neon line */
+    animation: heartbeat 1.5s linear infinite; /* Faster animation */
+    box-shadow: 0 0 10px #0ff; /* Glowing effect */
 }
 
-.tagline{
-    font-family: 'Times New Roman', Times, serif;
-}
-
-
-/* Heartbeat animation */
 @keyframes heartbeat {
-    0% {
-        transform: scaleX(4);
-    }
-    25% {
-        transform: scaleX(5.5);
-    }
-    50% {
-        transform: scaleX(3);
-    }
-    75% {
-        transform: scaleX(4.5);
-    }
-    100% {
-        transform: scaleX(4);
-    }
+    0% { transform: scaleX(1); opacity: 0.5;}
+    50% { transform: scaleX(1.5); opacity: 1;}
+    100% { transform: scaleX(1); opacity: 0.5; }
 }
+
+.tagline {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.8em;
+    font-style: italic;
+    margin-top: 40px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+/* Background Stars */
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url('assets/stars.png'); Replace with your star image */
+    background-size: cover;
+    opacity: 0.3;
+    animation: moveStars 50s linear infinite; /* Slow animation */
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes moveStars {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 500px; } /* Adjust values for different movement */
+}
+
 
 @media (max-width: 768px) {
     .welcome-text {
-        font-size: 3em;
+        font-size: 2em;
     }
+
     .welcome-text h1 {
         line-height: 0.7;
-        margin-bottom: 0.1em;
+        margin-bottom: 0.15em;
     }
+
     .author-info {
-        font-size: 1rem;
-        margin-top: 1px; /* Reduced margin on mobile */
+        font-size: 1.1rem;
+        margin-top: 20px;
     }
 
     .heartbeat-line {
-        width: 80px; /* Adjust width for smaller screens */
+        width: 100px;
     }
-
-    .star {
-        width: 7px; /* Smaller star for mobile */
-        height: 7px;
+    .tagline{
+        font-size: 1.4em;
     }
 }
